@@ -3,14 +3,9 @@ const jsforce = require('jsforce');
 const dotenv = require('dotenv');
 dotenv.config();
 const app = express();
-const PORT = 5001;
+const PORT = process.env.PORT || 5001;
 
 const { SF_LOGIN_URL, SF_USERNAME, SF_PASSWORD, SF_TOKEN } = process.env;
-
-console.log(SF_LOGIN_URL);
-console.log(SF_USERNAME);
-console.log(SF_PASSWORD);
-console.log(SF_TOKEN);
 
 const conn = new jsforce.Connection({
     loginUrl: SF_LOGIN_URL,
